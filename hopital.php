@@ -33,6 +33,24 @@ class user {
 
 }
 
+class Patient extends Utilisateur {
+    public $rendez_vous = []; 
+
+
+    public function prendreRendezVous($date, $medecin) {
+        $this->rendez_vous[] = [
+            'date' => $date,
+            'medecin' => $medecin
+        ];
+    }
+
+    
+    public function afficherRendezVous() {
+        foreach ($this->rendez_vous as $rdv) {
+            echo "Rendez-vous avec Dr. " . $rdv['medecin'] . " le " . $rdv['date'] . "\n";
+        }
+    }
+}
 
 $name = new user("Abdellah","EL MALKY");
 
